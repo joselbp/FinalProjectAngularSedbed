@@ -1,0 +1,59 @@
+<!-- navBar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['']" routerLinkActive="router-link-active">FakeFace</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">SignIn</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">SignUp</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="login-form" class="login-wrapper" autocomplete="off" (ngSubmit)="validateForm(form)" #form="ngForm">
+          <div class=" col-12 form-group">
+            <label class="col-2">Email</label>
+            <div class="col-10">
+              <input type="email" name="email" class="form-control" placeholder="Email" required ngModel
+                #email="ngModel" [class.is-inavlid]="email.invalid && email.touched">
+            </div>
+          </div>
+          <div class=" col-12 form-group">
+            <label class="col-2">Password</label>
+            <div class="col-10">
+              <input type="password" name="password" class="form-control" placeholder="Password" required ngModel
+                #password="ngModel" [class.is-inavlid]="password.invalid && password.touched">
+            </div>
+          </div>
+          <div class=" col-12 form-group">
+            <button type="submit" class="btn btn-info">Sign In</button>
+            <button type="submit" class="btn btn-secondary">Sign Up</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
