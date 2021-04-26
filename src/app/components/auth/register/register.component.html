@@ -1,0 +1,59 @@
+<!-- Navbar -->
+<app-nav-bar></app-nav-bar>
+<!-- Card -->
+<div class="container-card">
+  <div class="row">
+    <div class="card">
+      <div class="card-header">
+        Sign Up
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">
+          How do you want to Sign Up?</h5>
+        <!-- Form -->
+        <form class="login-form" autocomplete="off" [formGroup]="form" (ngSubmit)="guardar();register()">
+          <div class=" col-12 form-group ">
+            <label class="col-4 card-text">Name</label>
+            <div class="col-12">
+              <input type="text" class="form-control" placeholder="Name" formControlName="name">
+              <small class="text-danger" *ngIf="datosInvalidos('name') && enviado">Nombre no valido</small>
+            </div>
+          </div>
+          <div class=" col-12 form-group ">
+            <label class="col-2 card-text">Email</label>
+            <div class="col-12">
+              <input type="email" class="form-control" placeholder="Email" formControlName="email">
+              <small class="text-danger" *ngIf="datosInvalidos('email') && enviado">Email no valido</small>
+            </div>
+          </div>
+          <div class=" col-12 form-group" formGroupName="passwords">
+            <label class="col-4 card-text">Password</label>
+            <div class="col-12">
+              <input type="password" class="form-control" placeholder="Password" formControlName="password"
+                [class.is-invalid]="pass1NoValido">
+              <small class="text-danger" *ngIf="pass1NoValido">Contraseña debil</small>
+            </div>
+          </div>
+          <div class=" col-12 form-group" formGroupName="passwords">
+            <label class="col-8 card-text">Repeat Password</label>
+            <div class="col-12">
+              <input type="password" class="form-control" placeholder="Password" formControlName="password2"
+                [class.is-invalid]="pass2NoValido && enviado">
+              <small class="text-danger" *ngIf="pass2NoValido && enviado">Las contraseñas no coinciden</small>
+            </div>
+          </div>
+          <br>
+          <div class=" col-12 form-group" id="btn">
+            <button type="submit" class="btn btn-secondary col-4">Sign Up</button>
+          </div>
+          <hr>
+          <div class="form-group">
+            <button class="btn btn-danger col-5" style="margin-right: 16%;">Google</button>
+            <button class="btn btn-primary col-5">Facebook</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

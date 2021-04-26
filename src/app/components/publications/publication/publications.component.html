@@ -1,0 +1,41 @@
+<div class="container" *ngFor="let item of postsList">
+  <div class="card">
+    <!-- Header -->
+    <div class="row card-header d-flex justify-content-between" id="title">
+      <div class="col">
+        <img [src]="item.user?.avatar" alt="">
+        <h6>{{item.CreatedAt|date}}</h6>
+      </div>
+      <div class="col">{{item.user?.name}}</div>
+    </div>
+    <!-- texto o imagen de la publicación -->
+    <div class="row card-body">
+      <img [src]="item.image_url" alt="">
+      <h3>{{item.posted_text}}</h3>
+    </div>
+    <hr>
+
+    <!-- Reacciones -->
+
+    <app-reactions [post]="item" (emitPostId)="updateListPostReaction($event)">
+    </app-reactions>
+    <div class="col d-flex justify-content-start" style="padding-left: 37px;" *ngIf="item.reactions?.length!=0">
+      {{item.reactions?.length}}</div>
+
+    <hr>
+    <!-- Comentarios -->
+    <div class="row divComments" *ngFor="let com of item.comments">
+      <div class="col-2 ">
+        <img [src]="com.User.avatar" alt="" id="imgComments">
+        <h6>{{com.CreatedAt|date}}</h6>
+        <div class="d-flex justify-content-start align-items-center">
+          <h5>{{com.User.name}}</h5>
+        </div>
+      </div>
+      <div class="col-10 d-flex justify-content-start align-items-center">
+        <h4>{{com.comment}}</h4>
+      </div>
+    </div>
+    <hr>
+  </div>
+</div>

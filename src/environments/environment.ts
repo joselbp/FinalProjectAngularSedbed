@@ -4,6 +4,12 @@
 
 export const environment = {
   production: false,
+  POST_API_URL: 'http://18.189.21.84:5050',
+  regexEmail:
+    "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$",
+  regexPassword:
+    '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$',
+
   firebaseConfig: {
     apiKey: 'AIzaSyDfM6_TQ84heSin7W3uqD8wdV1YsCKm40Y',
     authDomain: 'fakeface-63229.firebaseapp.com',

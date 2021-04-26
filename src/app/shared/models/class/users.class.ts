@@ -1,9 +1,7 @@
 export class UsersClass {
-  constructor(
-    uid: string,
-    name: string,
-    email: string,
-    password?: string,
-    img?: string
-  ) {}
+  public ID = 0;
+  public CreatedAt = null;
+  public UpdatedAt = null;
+  public DeletedAt = null
+  constructor(public name: string, public email: string, public password: string, public avatar?: string) { }
 }

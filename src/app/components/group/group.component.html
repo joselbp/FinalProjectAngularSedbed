@@ -1,0 +1,15 @@
+<div class="container"><i class="far fa-users-medical" (click)="serviceModal.createModal(modalComponent)"></i>
+  <hr>
+</div>
+<div class="container" *ngFor="let item of groupsList">
+  <div class="row">
+    <div class="card-body">
+      <h5 class="card-title">{{item.name | uppercase}}</h5>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img [src]="item.imageUrl" class="card-img-top img-fluid">
+    </div>
+    <div class="col-12"> <i class="fas fa-plus-circle" (click)="addUserGroup(item.ID)"></i></div>
+  </div>
+
+</div>

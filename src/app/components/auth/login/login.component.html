@@ -1,0 +1,40 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-card">
+  <div class="row">
+    <div class="card">
+      <div class="card-header">
+        Log in
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">
+          How do you want to log in?</h5>
+
+        <form id="login-form" class="login-form" autocomplete="off" [formGroup]="form" (ngSubmit)="login()">
+          <div class=" col-12 form-group ">
+            <label class="col-2 card-text">Email</label>
+            <div class="col-12">
+              <input type="email" class="form-control" placeholder="Email" formControlName="email">
+            </div>
+          </div>
+          <div class=" col-12 form-group">
+            <label class="col-4 card-text">Password</label>
+            <div class="col-12">
+              <input type="password" class="form-control" placeholder="Password" formControlName="password">
+            </div>
+          </div>
+          <br>
+          <div class=" col-12 form-group" id="btn">
+            <button type="submit" class="btn btn-info col-4">Log In</button>
+          </div>
+          <hr>
+          <div class="form-group">
+            <button class="btn btn-danger col-5" style="margin-right: 16%;">Google</button>
+            <button class="btn btn-primary col-5">Facebook</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>

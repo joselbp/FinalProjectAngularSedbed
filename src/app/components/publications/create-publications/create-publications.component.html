@@ -1,0 +1,30 @@
+<!-- Modal -->
+<div class="container">
+  <div class="row" id="title">
+    <img [src]="serviceStorage.getAvatar()" alt="" class="col">
+    <h6 class="col-3">{{serviceStorage.getNombreUsuario()}}</h6>
+    <h5 class="col-7">Create Post</h5>
+    <i class="fas fa-window-close col-1" (click)="closeModal()"></i>
+  </div>
+  <hr>
+  <form autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="row" id="comment">
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">What are you thinking
+          {{serviceStorage.getNombreUsuario()}}?</label>
+        <textarea class="form-control" id="textarea" rows="3" formControlName="posted_text"></textarea>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="mb-3">
+        <label for="formFileSm" class="form-label"> Select file</label>
+        <input class="form-control form-control-sm" id="formFileSm" type="file" formControlName="image_url"
+          (change)="chargeImgFirebase($event)" accept=".jpg, .png">
+      </div>
+    </div>
+    <div class="row" id="btnCreate"><button class="btn btn-primary" type="submit">Create</button></div>
+
+  </form>
+</div>

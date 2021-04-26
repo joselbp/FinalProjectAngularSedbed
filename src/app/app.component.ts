@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SocketsService } from './shared/services/sockects/sockets.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AppPublicaciones';
+  constructor(private serviceSocket: SocketsService) { }
 }

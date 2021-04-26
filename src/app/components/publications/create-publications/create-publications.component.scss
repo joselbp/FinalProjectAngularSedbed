@@ -1,0 +1,25 @@
+.container {
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  img {
+    border-radius: 50%;
+    width: 10px;
+    height: 40px;
+  }
+  h5 {
+    padding-left: 100px;
+  }
+}
+
+#btnCreate {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 20px;
+}

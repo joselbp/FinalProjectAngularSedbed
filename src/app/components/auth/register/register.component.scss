@@ -1,0 +1,26 @@
+.container-card {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.card {
+  padding: 40px;
+  flex-direction: column;
+  border-radius: 50px;
+  box-shadow: 1px 1px 40px, -1px -1px 40px;
+  .card-header {
+    border-radius: 20px;
+    text-align: center;
+    font-size: x-large;
+    font-weight: 800;
+  }
+}
+input {
+  box-shadow: 1px 1px 5px inset;
+}
+#btn {
+  text-align: center;
+}

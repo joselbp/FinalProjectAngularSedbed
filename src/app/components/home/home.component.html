@@ -1,0 +1,24 @@
+<app-nav-bar></app-nav-bar>
+<div class="d-flex justify-content-between">
+  <div class="row col-12">
+    <div class="col-2">
+      <app-search></app-search>
+      <hr>
+      <h5 style="text-align: center;">Personas para seguir</h5>
+      <app-user></app-user>
+    </div>
+    <div class="col-8 ">
+      <div class="container-create-post d-flex justify-content-between">
+        <img [src]="serviceStorage.getAvatar()" id="img-thinking">
+        <button class="btn btn-secondary" type="button" id="btnCreateModal"
+          (click)="serviceModal.createModal(componentModal)">What are you
+          thinking
+          {{serviceStorage.getNombreUsuario()}}?</button>
+      </div>
+      <app-publications></app-publications>
+    </div>
+    <div class="col-2">
+      <app-group></app-group>
+    </div>
+  </div>
+</div>

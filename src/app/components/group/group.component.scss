@@ -1,0 +1,23 @@
+.card {
+  box-shadow: 1px 1px 40px, -1px -1px 40px;
+  flex-direction: row;
+  border-radius: 100%;
+  justify-content: center;
+}
+img {
+  border-radius: 70%;
+  display: flex;
+}
+.container {
+  width: 60%;
+  padding-bottom: 15%;
+  text-align: center;
+}
+
+.card-body {
+  justify-content: center;
+  display: flex;
+}
+i {
+  cursor: pointer;
+}

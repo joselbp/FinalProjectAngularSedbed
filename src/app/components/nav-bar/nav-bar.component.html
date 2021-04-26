@@ -1,0 +1,39 @@
+<!-- navBar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">FakeFace</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Auth -->
+    <div class="collapse navbar-collapse ml-auto" id="navbarNav">
+      <ul class="navbar-nav" *ngIf="!serviceSession.getToken()">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login">Log In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register">Sign Up</a>
+        </li>
+      </ul>
+      <!-- search -->
+      <form autocomplete="off" class="d-flex" *ngIf="serviceSession.getToken()">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #search name="input">
+        <button class="btn btn-outline-success" (click)="serviceData.search(search.value)" name="boton">Search</button>
+      </form>
+    </div>
+    <!-- User -->
+    <div class="btn-group dropdown" *ngIf="serviceSession.getToken()">
+      <img [src]="serviceSession.getAvatar()" class="card-img-top" [routerLink]="'/posts/user'"
+        [queryParams]="{id:serviceSession.getId()}">
+      <button id="desplegable" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+        aria-expanded="false">
+        {{serviceSession.getNombreUsuario()}}
+      </button>
+      <!-- Logout -->
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" (click)="serviceSession.logOutUser()" routerLink="/login">Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
