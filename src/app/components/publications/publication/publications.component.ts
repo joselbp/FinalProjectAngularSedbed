@@ -80,4 +80,14 @@ export class PublicationsComponent implements OnInit {
       }
     });
   }
+  createComment(comment: any, postId: number) {
+    const body = {
+      comment: comment.target.value,
+      post_id: postId,
+      user_id: this.serviceStorage.getId()
+    }
+    console.log(comment);
+
+    this.servicePost.requestPost(body, 'comments').subscribe()
+  }
 }

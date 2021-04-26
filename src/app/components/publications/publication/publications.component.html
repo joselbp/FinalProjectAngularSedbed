@@ -22,6 +22,12 @@
     <div class="col d-flex justify-content-start" style="padding-left: 37px;" *ngIf="item.reactions?.length!=0">
       {{item.reactions?.length}}</div>
 
+    <div class="row">
+      <div class="input-group">
+        <span class="input-group-text">send</span>
+        <textarea class="form-control" aria-label="With textarea" (click)="createComment($event,item.ID)"></textarea>
+      </div>
+    </div>
     <hr>
     <!-- Comentarios -->
     <div class="row divComments" *ngFor="let com of item.comments">
